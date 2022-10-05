@@ -13,8 +13,12 @@ def is_prime(n: int) -> bool:
     >>> is_prime(8)
     False
     """
-    # PUT YOUR CODE HERE
-    pass
+    if n == 1:
+        return False
+    for i in range(2, int(n**0.5 + 1)):
+        if n % i == 0:
+            return False
+    return True
 
 
 def gcd(a: int, b: int) -> int:
@@ -26,8 +30,30 @@ def gcd(a: int, b: int) -> int:
     >>> gcd(3, 7)
     1
     """
-    # PUT YOUR CODE HERE
-    pass
+    a, b = max(a, b), min(a, b)
+    if b == 0:
+        return a
+    while a % b != 0:
+        if b > a:
+            a, b = b, a
+        a = a % b
+    return b
+
+
+def euclid_extended(a, b):
+    a, b = max(a, b), min(a, b)
+    x0, x1, y0, y1 = 1, 0, 0, 1
+    x, y = 0, 0
+    while b > 0:
+        q = a // b
+        r = a % b
+        x = x0 - q * x1
+        y = y0 - q * y1
+        a, b = b, r
+        x0, x1 = x1, x
+        y0, y1 = y1, y
+    x, y = x0, y0
+    return [a, x, y]
 
 
 def multiplicative_inverse(e: int, phi: int) -> int:
@@ -38,8 +64,13 @@ def multiplicative_inverse(e: int, phi: int) -> int:
     >>> multiplicative_inverse(7, 40)
     23
     """
-    # PUT YOUR CODE HERE
-    pass
+    list = euclid_extended(phi, e)
+    if list[0] != 1:
+        return 0
+    list[2] %= phi
+    if list[2] < 0:
+        list[2] += phi
+    return list[2]
 
 
 def generate_keypair(p: int, q: int) -> tp.Tuple[tp.Tuple[int, int], tp.Tuple[int, int]]:
@@ -48,10 +79,10 @@ def generate_keypair(p: int, q: int) -> tp.Tuple[tp.Tuple[int, int], tp.Tuple[in
     elif p == q:
         raise ValueError("p and q cannot be equal")
 
-    # n = pq
+    n = p * q
     # PUT YOUR CODE HERE
 
-    # phi = (p-1)(q-1)
+    phi = (p - 1) * (q - 1)
     # PUT YOUR CODE HERE
 
     # Choose an integer e such that e and phi(n) are coprime
@@ -85,7 +116,7 @@ def decrypt(pk: tp.Tuple[int, int], ciphertext: tp.List[int]) -> str:
     # Unpack the key into its components
     key, n = pk
     # Generate the plaintext based on the ciphertext and key using a^b mod m
-    plain = [chr((char ** key) % n) for char in ciphertext]
+    plain = [chr((char**key) % n) for char in ciphertext]
     # Return the array of bytes as a string
     return "".join(plain)
 
