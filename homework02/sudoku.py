@@ -44,8 +44,8 @@ def group(values: tp.List[T], n: int) -> tp.List[tp.List[T]]:
     """
     t: tp.List[T] = []
     res = []
-    dlina = len(values)
-    for i in range(dlina)
+    length = len(values)
+    for i in range(length)
         if i % n == 0 and i != 0:
             res.append(t)
             t = []
