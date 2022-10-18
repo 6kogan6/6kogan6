@@ -49,10 +49,9 @@ def group(values: tp.List[T], n: int) -> tp.List[tp.List[T]]:
         if i % n == 0 and i != 0:
             res.append(t)
             t = []
-         t.append(values[i])
+        t.append(values[i])
     res.append(t)
     return res
-
 def get_row(grid: tp.List[tp.List[str]], pos: tp.Tuple[int, int]) -> tp.List[str]:
     """Возвращает все значения для номера строки, указанной в pos
 
