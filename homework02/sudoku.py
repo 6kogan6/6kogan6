@@ -184,7 +184,7 @@ def check_solution(solution: tp.List[tp.List[str]]) -> bool:
             return False
         if i == 0 or i == 3 or i == 6:
             for j in range(0, 9, 3):
-                if len(get_block(g, (i, j))) != len(set(get_block(grid, (i, j)))):
+                if len(get_block(g, (i, j))) != len(set(get_block(g, (i, j)))):
                     return False
         if "." in g[i]:
             return False
