@@ -31,6 +31,7 @@ class GameOfLife:
 
     def draw_lines(self) -> None:
 
+        
         """ Отрисовать сетку """
         for x in range(0, self.width, self.cell_size):
             pygame.draw.line(self.screen, pygame.Color("black"), (x, 0), (x, self.height))
@@ -39,6 +40,7 @@ class GameOfLife:
 
     def run(self) -> None:
 
+        
         """ Запустить игру """
         pygame.init()
         clock = pygame.time.Clock()
