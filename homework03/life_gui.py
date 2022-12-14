@@ -86,6 +86,6 @@ class GUI(UI):
 
 
 
-proto = GameOfLife(size=(20,20),randomize=False)
-game = GUI(cell_size=40,life=proto)
+proto = GameOfLife(size=(20, 20), randomize=False)
+game = GUI(cell_size=40, life=proto)
 game.run()
