@@ -85,7 +85,6 @@ class GUI(UI):
         pygame.quit()
 
 
-
 proto = GameOfLife(size=(20, 20), randomize=False)
 game = GUI(cell_size=40, life=proto)
 game.run()
