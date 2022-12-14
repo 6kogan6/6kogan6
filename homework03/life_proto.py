@@ -85,8 +85,8 @@ class GameOfLife:
             Матрица клеток размером `cell_height` х `cell_width`.
         """
         return [
-            [random.choice((0, 1)) if randomize else 0 for i in range(self.cell_height)] for j in
-                range(self.cell_width)
+            [random.choice((0, 1)) if randomize else 0 for i in range(self.cell_height)] 
+            for j in range(self.cell_width)
         ]
 
     def draw_grid(self) -> None:
@@ -192,5 +192,7 @@ class GameOfLife:
 
 
 
+
+    
 #game = GameOfLife(cell_size=40)
 #game.run()
