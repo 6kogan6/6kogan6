@@ -31,7 +31,6 @@ class GameOfLife:
 
     def draw_lines(self) -> None:
 
-        
         """Отрисовать сетку"""
         for x in range(0, self.width, self.cell_size):
             pygame.draw.line(self.screen, pygame.Color("black"), (x, 0), (x, self.height))
@@ -40,7 +39,6 @@ class GameOfLife:
 
     def run(self) -> None:
 
-        
         """Запустить игру"""
         pygame.init()
         clock = pygame.time.Clock()
@@ -85,6 +83,7 @@ class GameOfLife:
             Матрица клеток размером `cell_height` х `cell_width`.
         """
         return [
+            
             
             [random.choice((0, 1)) if randomize else 0 for i in range(self.cell_height)] 
             for j in range(self.cell_width)
@@ -191,9 +190,5 @@ class GameOfLife:
         return res
 
 
-
-
-
-    
-#game = GameOfLife(cell_size=40)
-#game.run()
+# game = GameOfLife(cell_size=40)
+# game.run()
