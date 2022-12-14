@@ -10,10 +10,14 @@ class Console(UI):
 
     def draw_borders(self, screen) -> None:
         
+        
+        
         """Отобразить рамку. """
         pass
 
     def draw_grid(self, screen) -> None:
+        
+        
         
         """Отобразить состояние клеток. """
         pass
