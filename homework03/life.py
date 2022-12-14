@@ -115,4 +115,6 @@ class GameOfLife:
             f.write("\n")
 
 
+        
+        
         f.close()
