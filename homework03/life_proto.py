@@ -105,7 +105,7 @@ class GameOfLife:
                         pygame.Color("white"),
                         (i * self.cell_size, j * self.cell_size, self.cell_size, self.cell_size),
                     )
-        return
+        return None
 
     def get_neighbours(self, cell: Cell) -> Cells:
         """
