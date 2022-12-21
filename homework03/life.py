@@ -114,5 +114,4 @@ class GameOfLife:
                 f.write(str(j))
             f.write("\n")
 
-
         f.close()
