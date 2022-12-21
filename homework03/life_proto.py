@@ -51,7 +51,7 @@ class GameOfLife:
         running = True
         while running:
             for event in pygame.event.get():
-                if event.type == QUIT:
+                if event.type == pygame.QUIT:
                     running = False
             self.draw_grid()
             self.draw_lines()
@@ -105,6 +105,7 @@ class GameOfLife:
                         pygame.Color("white"),
                         (i * self.cell_size, j * self.cell_size, self.cell_size, self.cell_size),
                     )
+        return
 
     def get_neighbours(self, cell: Cell) -> Cells:
         """
